@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recipe/core/utils/color_helper.dart';
 import 'package:recipe/core/utils/styles.dart';
 import 'package:recipe/core/widgets/custom_elevated_button.dart';
+import 'package:recipe/features/splash/view/widgets/splah_image_row.dart';
 import 'package:sizer/sizer.dart';
 
 class Splash extends StatelessWidget {
@@ -104,23 +105,6 @@ class Splash extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class SplashImagesRow extends StatelessWidget {
-  const SplashImagesRow({
-    super.key,
-    required this.imagePath1,
-    required this.imagePath2,
-  });
-  final String imagePath1;
-  final String imagePath2;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [Image.asset(imagePath1), Image.asset(imagePath2)],
     );
   }
 }
