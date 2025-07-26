@@ -4,4 +4,6 @@ class AppIcons {
   static const String iHome = 'assets/images/Menu Icon (2).svg';
   static const String iProfile = 'assets/images/Menu Icon (3).svg';
   static const String iChef = 'assets/images/Chef.svg';
+  static const String iBuy = "assets/images/Buy.svg";
+  static const String iSun = "assets/images/Sun.svg";
 }
