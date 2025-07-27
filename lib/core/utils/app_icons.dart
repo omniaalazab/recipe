@@ -6,4 +6,7 @@ class AppIcons {
   static const String iChef = 'assets/images/Chef.svg';
   static const String iBuy = "assets/images/Buy.svg";
   static const String iSun = "assets/images/Sun.svg";
+  static const String iKal = "assets/images/kal.svg";
+  static const String iTime = "assets/images/Time.svg";
+  static const String iHeart = "assets/images/Heart.svg";
 }
