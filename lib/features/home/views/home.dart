@@ -5,6 +5,8 @@ import 'package:recipe/core/utils/styles.dart';
 import 'package:recipe/features/home/data/models/recipe_model.dart';
 import 'package:recipe/features/home/views/widgets/bottom_navigation_bar.dart';
 import 'package:recipe/features/home/views/widgets/custom_label.dart';
+import 'package:recipe/features/home/views/widgets/popular_recipe_listview.dart';
+import 'package:recipe/features/home/views/widgets/popular_recipe_row.dart';
 import 'package:sizer/sizer.dart';
 
 class HomeView extends StatefulWidget {
@@ -88,88 +90,9 @@ class _HomeViewState extends State<HomeView> {
               }),
             ),
             SizedBox(height: 5.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Popular Recipes", style: Styles.textStyle20),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "see all",
-                    style: Styles.textStyle14.copyWith(color: Colors.blue),
-                  ),
-                ),
-              ],
-            ),
+            PopularRecipeRow(),
             SizedBox(height: 2.h),
-            Expanded(
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: recipePopular.length,
-                itemBuilder: (context, index) {
-                  final recipe = recipePopular[index];
-                  return SizedBox(
-                    width: 50.w,
-
-                    child: Card(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Stack(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(20.sp),
-                                  child: Image.network(
-                                    recipe.imageUrl,
-                                    width: 50.w,
-                                  ),
-                                ),
-                                Positioned(
-                                  right: 2.w,
-                                  top: 1.h,
-                                  child: SvgPicture.asset(
-                                    AppIcons.iHeart,
-                                    height: 2.h,
-                                    width: 5.w,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 1.h),
-                            Text(recipe.title, style: Styles.textStyle16),
-                            SizedBox(height: 1.h),
-                            Text(
-                              recipe.description,
-                              style: Styles.textStyle18,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            SizedBox(height: 1.h),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                SvgPicture.asset(AppIcons.iKal),
-                                Text(
-                                  '${recipe.kalory} kcal',
-                                  style: Styles.textStyle14,
-                                ),
-                                SvgPicture.asset(AppIcons.iTime),
-                                Text(
-                                  '${recipe.time} min',
-                                  style: Styles.textStyle14,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
+            PopularRecipeListView(recipePopular: recipePopular),
           ],
         ),
       ),
