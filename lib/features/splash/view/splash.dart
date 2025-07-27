@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:recipe/core/helper/app_routes.dart';
 import 'package:recipe/core/utils/color_helper.dart';
 import 'package:recipe/core/utils/styles.dart';
 import 'package:recipe/core/widgets/custom_elevated_button.dart';
@@ -86,7 +88,9 @@ class Splash extends StatelessWidget {
                   CustomElevatedButton(
                     widthButton: 90.w,
                     buttonText: "Login",
-                    onPressedFunction: () {},
+                    onPressedFunction: () {
+                      context.push(AppRouter.kHomeView);
+                    },
                     buttonColor: Colors.black,
                   ),
                   SizedBox(height: 1.5.h),
